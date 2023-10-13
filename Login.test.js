@@ -15,20 +15,39 @@ describe('Tests the Login class', () => {
         let result = loginClass.login(username, password); // Anropar funktion login i classen Login
 
         expect(result).toBe(true);
-
-        console.log(result)
    })
 
    it('Incorrect username and password returns false', () => {
+    let loginClass = new Login(); // instans av Login class
 
+        let username = 'wrong'
+        let password = 'wrong'
+
+        let result = loginClass.login(username, password); // Anropar funktion login i classen Login
+
+        expect(result).toBe(false);
    })
 
    it('Correct username incorrect password returns false', () => {
-    
+    let loginClass = new Login(); // instans av Login class
+
+        let username = 'admin'
+        let password = 'wrong'
+
+        let result = loginClass.login(username, password); // Anropar funktion login i classen Login
+
+        expect(result).toBe(false);
    })
 
    it('Incorrect username correct password returns false', () => {
-    
+    let loginClass = new Login(); // instans av Login class
+
+        let username = 'wrong'
+        let password = 'password123'
+
+        let result = loginClass.login(username, password); // Anropar funktion login i classen Login
+
+        expect(result).toBe(false);
    })
 
 })

@@ -1,12 +1,9 @@
 class Login {
 
-    constructor() {
-        
-    }
-
-    login(username, password) {
+     login(username, password) {
 
         return username === 'admin' && password === 'password123'
+
     } 
 
 }
