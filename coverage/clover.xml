@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1697193204544" clover="3.2.0">
-  <project timestamp="1697193204544" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2" elements="6" coveredelements="6" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
+<coverage generated="1697206611013" clover="3.2.0">
+  <project timestamp="1697206611013" name="All files">
+    <metrics statements="11" coveredstatements="11" conditionals="12" coveredconditionals="12" methods="1" coveredmethods="1" elements="24" coveredelements="24" complexity="0" loc="11" ncloc="11" packages="1" files="1" classes="1"/>
     <file name="Login.js" path="/Users/mio.lundqvist/development/nodejs-login/Login.js">
-      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-      <line num="9" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="14" count="1" type="stmt"/>
+      <metrics statements="11" coveredstatements="11" conditionals="12" coveredconditionals="12" methods="1" coveredmethods="1"/>
+      <line num="5" count="9" type="cond" truecount="4" falsecount="0"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="10" count="8" type="cond" truecount="4" falsecount="0"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="15" count="7" type="cond" truecount="4" falsecount="0"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="22" count="6" type="stmt"/>
+      <line num="23" count="6" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

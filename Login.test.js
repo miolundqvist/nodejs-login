@@ -1,53 +1,130 @@
 const Login = require ('./Login')
 
 describe('Tests the Login class', () => {
+
+   // const logSpy = jest.spyOn(global.console, 'log');
     
-    it('Skapar ett objekt av login-klassen', () => {
-        expect(new Login()).toBeInstanceOf(Login) // Eftersom constructorn i Login inte har några parametrar behöver man inte skicka in något
+    test('Creates an object of the login class', () => {
+        expect(new Login()).toBeInstanceOf(Login)
     })
 
-    it('Correct username and password returns true', () => {
-        let loginClass = new Login(); // instans av Login class
+    test('Correct username and password returns true', () => {
+        let loginClass = new Login();
 
         let username = 'admin'
         let password = 'password123'
 
-        let result = loginClass.login(username, password); // Anropar funktion login i classen Login
+        let result = loginClass.login(username, password);
 
         expect(result).toBe(true);
    })
 
-   it('Incorrect username and password returns false', () => {
-    let loginClass = new Login(); // instans av Login class
+   test('Incorrect username and password returns false', () => {
+    
+    let loginClass = new Login();
 
         let username = 'wrong'
         let password = 'wrong'
 
-        let result = loginClass.login(username, password); // Anropar funktion login i classen Login
+        let result = loginClass.login(username, password);
 
         expect(result).toBe(false);
    })
 
-   it('Correct username incorrect password returns false', () => {
-    let loginClass = new Login(); // instans av Login class
+   test('Correct username incorrect password returns false', () => {
+    
+    let loginClass = new Login();
 
         let username = 'admin'
         let password = 'wrong'
 
-        let result = loginClass.login(username, password); // Anropar funktion login i classen Login
+        let result = loginClass.login(username, password);
 
         expect(result).toBe(false);
    })
 
-   it('Incorrect username correct password returns false', () => {
-    let loginClass = new Login(); // instans av Login class
+   test('Incorrect username correct password returns false', () => {
+
+    let loginClass = new Login();
+        let username = 'wrong'
+        let password = 'password123'
+
+        let result = loginClass.login(username, password);
+
+        expect(result).toBe(false);
+   })
+
+   test('Empty username returns "felaktig input"', () => {
+
+    const logSpy = jest.spyOn(global.console, 'log');
+    
+    let loginClass = new Login();
+
+        let username = ''
+        let password = 'password123'
+
+        let result = loginClass.login(username, password);
+        
+        expect(logSpy).toHaveBeenCalledWith('Felaktig input')
+        logSpy.mockRestore();
+   })
+
+   test('Password set to null returns "felaktig input"', () => {
+
+    const logSpy = jest.spyOn(global.console, 'log');
+    
+    let loginClass = new Login();
+
+        let username = 'admin'
+        let password = null
+
+        let result = loginClass.login(username, password);
+        
+        expect(logSpy).toHaveBeenCalledWith('Felaktig input')
+        logSpy.mockRestore();
+   })
+
+   test('Incorrect username returns "Felaktigt användarnamn eller lösenord"', () => {
+
+    const logSpy = jest.spyOn(global.console, 'log');
+    
+    let loginClass = new Login();
 
         let username = 'wrong'
         let password = 'password123'
 
-        let result = loginClass.login(username, password); // Anropar funktion login i classen Login
+        let result = loginClass.login(username, password);
+        
+        expect(logSpy).toHaveBeenCalledWith('Felaktigt användarnamn eller lösenord')
+        logSpy.mockRestore();
 
-        expect(result).toBe(false);
+   })
+
+   test('Incorrect password returns "Felaktigt namn eller lösenord"', () => {
+    const logSpy = jest.spyOn(global.console, 'log');
+    
+    let loginClass = new Login();
+        let username = 'admin'
+        let password = 'wrong'
+
+        let result = loginClass.login(username, password);
+        
+        expect(logSpy).toHaveBeenCalledWith('Felaktigt användarnamn eller lösenord')
+        logSpy.mockRestore();
+   })
+
+   test('Incorrect username and password returns "Felaktigt namn eller lösenord"', () => {
+    const logSpy = jest.spyOn(global.console, 'log');
+    
+    let loginClass = new Login();
+
+        let username = 'wrong'
+        let password = 'wrong'
+
+        let result = loginClass.login(username, password);
+        
+        expect(logSpy).toHaveBeenCalledWith('Felaktigt användarnamn eller lösenord')
+        logSpy.mockRestore();
    })
 
 })
